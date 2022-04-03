@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   customKey: {
     width: w("20%"),
     height: w("20%"),
-    borderRadius: w("20%"),
+    borderRadius: w("2%"),
     marginBottom: h("1%"),
     display: "flex",
     alignItems: "center",

@@ -36,10 +36,10 @@ export default CustomPaswdText;
 
 const styles = StyleSheet.create({
   customInptdiv: {
-    width: w("94%"),
+    width: w("90%"),
     backgroundColor: inputBg,
     borderRadius: h("1%"),
-    height: h("5%"),
+    height: h("6%"),
     display: "flex",
     alignItems: "center",
     justifyContent: "space-evenly",

@@ -41,7 +41,7 @@ const AuthAdminComp = ({ onSubmit, onOther }) => {
       <View style={styles.inputs}>
         <View>
           <Text style={styles.labl}>Choose a user</Text>
-          <CustomLoginUser />
+          <CustomLoginUser title={"John"} />
         </View>
         <View>
           <Text style={styles.labl}>Password</Text>
@@ -59,7 +59,7 @@ const AuthAdminComp = ({ onSubmit, onOther }) => {
         ))}
       </View>
       <TouchableOpacity style={styles.emailbtn} onPress={onOther}>
-        <Text style={styles.emailtxt}>Login with Email</Text>
+        <Text style={styles.emailtxt}>Login using Email address</Text>
       </TouchableOpacity>
     </>
   );
@@ -111,9 +111,9 @@ const styles = StyleSheet.create({
     marginTop: h("2%"),
   },
   emailtxt: {
-    fontSize: h("2.7%"),
+    fontSize: h("2.2%"),
     color: mainColor,
-    fontWeight: "700",
     letterSpacing: 1,
+    textTransform: "capitalize",
   },
 });

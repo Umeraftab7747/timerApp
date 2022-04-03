@@ -16,10 +16,10 @@ export default CustomInput;
 
 const styles = StyleSheet.create({
   customInptdiv: {
-    width: w("94%"),
+    width: w("90%"),
     borderRadius: h("1%"),
     backgroundColor: inputBg,
-    height: h("5%"),
+    height: h("6%"),
     display: "flex",
     alignItems: "center",
     justifyContent: "space-evenly",

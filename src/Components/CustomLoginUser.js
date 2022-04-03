@@ -9,16 +9,16 @@ import React, { useState } from "react";
 import { Feather, AntDesign } from "@expo/vector-icons";
 import { inputBg, mainColor } from "../AppColors";
 import { w, h } from "react-native-responsiveness";
-const CustomLoginUser = ({ istimer }) => {
+const CustomLoginUser = ({ istimer, title }) => {
   return (
     <View
       style={{
         ...styles.customInptdiv,
-        width: istimer ? "90%" : w("94%"),
+        width: istimer ? "90%" : w("90%"),
       }}
     >
       <View style={styles.custminp}>
-        <Text>hy</Text>
+        <Text>{title}</Text>
       </View>
       <TouchableOpacity
         style={styles.inpBtn}
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   customInptdiv: {
     backgroundColor: inputBg,
     borderRadius: h("1%"),
-    height: h("5%"),
+    height: h("6%"),
     display: "flex",
     alignItems: "center",
     justifyContent: "space-evenly",

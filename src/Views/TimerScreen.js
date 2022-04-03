@@ -20,7 +20,7 @@ const TimerScreen = ({ navigation }) => {
       </View>
 
       <View style={styles.activitysel}>
-        <CustomLoginUser istimer={true} />
+        <CustomLoginUser title={"Working"} istimer={true} />
       </View>
       <CircleTimer
         radius={80}
@@ -48,7 +48,7 @@ const TimerScreen = ({ navigation }) => {
       <CustomModel show={ismodal} toggleModal={() => setismodal(!ismodal)}>
         <View style={styles.stopdiv}>
           <Text style={styles.head}>Stop Reason</Text>
-          <CustomLoginUser istimer={true} />
+          <CustomLoginUser title={"Break"} istimer={true} />
           <CustomAuthBtn
             title={"Validate"}
             onClick={() => setismodal(!ismodal)}
