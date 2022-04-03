@@ -15,7 +15,7 @@ const TimerScreen = ({ navigation }) => {
         <Text style={styles.head}>Timer</Text>
         <View style={styles.datdiv}>
           <Feather name="calendar" size={h("3.1%")} color="black" />
-          <Text style={styles.dattxt}>DayActivity</Text>
+          <Text style={styles.dattxt}>08/03/2022</Text>
         </View>
       </View>
 
