@@ -15,7 +15,7 @@ import CustomKeyBtn from "./CustomKeyBtn";
 import CustomLoginUser from "./CustomLoginUser";
 import CustomPaswdText from "./CustomPaswdText";
 
-const AuthAdminComp = () => {
+const AuthAdminComp = ({ onSubmit, onOther }) => {
   const [inputpaswd, setinputpaswd] = useState("");
   const btnsArr = [
     { title: "1", onPressfun: () => setinputpaswd(inputpaswd + "1") },
@@ -29,7 +29,7 @@ const AuthAdminComp = () => {
     { title: "9", onPressfun: () => setinputpaswd(inputpaswd + "9") },
     { title: " ", onPressfun: () => console.log(" ") },
     { title: "0", onPressfun: () => setinputpaswd(inputpaswd + "0") },
-    { title: "Clear", onPressfun: () => setinputpaswd("clear") },
+    { title: "Clear", onPressfun: () => setinputpaswd("") },
   ];
 
   return (
@@ -45,16 +45,20 @@ const AuthAdminComp = () => {
         </View>
         <View>
           <Text style={styles.labl}>Password</Text>
-          <CustomPaswdText iconName="lock" text={"mytext"} />
+          <CustomPaswdText iconName="lock" text={inputpaswd} />
         </View>
-        <CustomAuthBtn title="Login" />
+        <CustomAuthBtn title="Login" onClick={onSubmit} />
       </View>
       <View style={styles.keyborddiv}>
         {btnsArr.map((dat, index) => (
-          <CustomKeyBtn title={dat.title} />
+          <CustomKeyBtn
+            key={index}
+            title={dat.title}
+            onPressfun={dat.onPressfun}
+          />
         ))}
       </View>
-      <TouchableOpacity style={styles.emailbtn}>
+      <TouchableOpacity style={styles.emailbtn} onPress={onOther}>
         <Text style={styles.emailtxt}>Login with Email</Text>
       </TouchableOpacity>
     </>

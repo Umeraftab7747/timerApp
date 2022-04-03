@@ -10,29 +10,20 @@ import { Feather } from "@expo/vector-icons";
 import { inputBg, mainColor } from "../AppColors";
 import { w, h } from "react-native-responsiveness";
 const CustomPaswdText = ({ iconName, text }) => {
-  const [staricktext, setstaricktext] = useState("");
-  const [showPaswd, setshowPaswd] = useState(true);
-  //   const res = text.split("");
-  //   res.map((dat) => {
-  //     setstaricktext(staricktext + "*");
-  //   });
-  //   useEffect(() => {
-  //     const res = text.split("");
-  //     res.map((dat) => {
-  //       setstaricktext(staricktext + "*");
-  //     });
-  //   }, [text]);
-  console.log(staricktext);
+  const [ishidden, setishidden] = useState(true);
+  const hashtext = "****************************************";
   return (
     <View style={styles.customInptdiv}>
       <Feather name={`${iconName}`} size={h("3%")} color={mainColor} />
-      <Text style={styles.custminp}>{text}</Text>
+      <Text style={styles.custminp}>
+        {ishidden ? hashtext.slice(0, text.length) : text}
+      </Text>
       <TouchableOpacity
         style={styles.inpBtn}
-        onPress={() => setshowPaswd(!showPaswd)}
+        onPress={() => setishidden(!ishidden)}
       >
         <Feather
-          name={showPaswd ? "eye-off" : "eye"}
+          name={ishidden ? "eye-off" : "eye"}
           size={h("2.5%")}
           color={mainColor}
         />
@@ -57,7 +48,6 @@ const styles = StyleSheet.create({
   },
   custminp: {
     width: "76%",
-    height: "100%",
     backgroundColor: "transparent",
   },
   inpBtn: {

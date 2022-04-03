@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const AddUserScreen = () => {
+const AddUserScreen = ({ navigation }) => {
   return (
     <View>
       <Text>AddUserScreen</Text>

@@ -2,13 +2,14 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { w, h } from "react-native-responsiveness";
 import { inputBg, screenBg } from "../AppColors";
-const CustomKeyBtn = ({ title }) => {
+const CustomKeyBtn = ({ title, onPressfun }) => {
   return (
     <TouchableOpacity
       style={{
         ...styles.customKey,
         backgroundColor: title === " " ? screenBg : inputBg,
       }}
+      onPress={onPressfun}
     >
       <Text style={title === "Clear" ? styles.text2 : styles.text}>
         {title}

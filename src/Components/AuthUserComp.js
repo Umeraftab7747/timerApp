@@ -5,13 +5,14 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import CustomInput from "./CustomInput";
 import CustomPaswdInput from "./CustomPaswdInput";
 import { w, h } from "react-native-responsiveness";
 import CustomAuthBtn from "./CustomAuthBtn";
 import { inputBg, mainColor } from "../AppColors";
-const AuthUserComp = () => {
+const AuthUserComp = ({ onSubmit }) => {
+  const [isRemember, setisRemember] = useState(false);
   return (
     <>
       <View style={styles.introdiv}>
@@ -28,15 +29,22 @@ const AuthUserComp = () => {
           <CustomPaswdInput iconName="lock" />
         </View>
         <View style={styles.btnsDiv}>
-          <TouchableOpacity style={styles.remberbtn}>
-            <View style={styles.emptybox} />
+          <TouchableOpacity
+            style={styles.remberbtn}
+            onPress={() => setisRemember(!isRemember)}
+          >
+            <View
+              style={
+                isRemember ? [styles.emptybox, styles.active] : styles.emptybox
+              }
+            />
             <Text>Remember me</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.forgtBtn}>
             <Text>Forgot Your Password</Text>
           </TouchableOpacity>
         </View>
-        <CustomAuthBtn title="Login" />
+        <CustomAuthBtn title="Login" onClick={onSubmit} />
       </View>
     </>
   );
@@ -70,6 +78,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     marginRight: h("1%"),
   },
+  active: { backgroundColor: mainColor },
   btnsDiv: {
     width: "100%",
     height: h("6%"),

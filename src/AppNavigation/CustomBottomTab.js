@@ -10,18 +10,18 @@ import {
   Foundation,
   FontAwesome,
   Entypo,
+  MaterialIcons,
+  AntDesign,
 } from "@expo/vector-icons";
 const Tab = createBottomTabNavigator();
-import HomeScreen from "../Views/HomeScreen";
-import ProfileScreen from "../Views/ProfileScreen";
-import OrderScreen from "../Views/OrderScreen";
-import CartScreen from "../Views/CartScreen";
-import { inActiveColor, mainColor, opacityColor, secColor } from "../AppColors";
 
+import { inputBg, mainColor, screenBg } from "../AppColors";
+import TimerScreen from "../Views/TimerScreen";
+import ActivityScreen from "../Views/ActivityScreen";
 const CustomBottomTab = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Timer"
       screenOptions={{
         tabBarStyle: {
           borderTopLeftRadius: 25,
@@ -30,44 +30,33 @@ const CustomBottomTab = () => {
           shadowOffset: { width: 0, height: 3 },
           shadowOpacity: 0.8,
           shadowRadius: 2,
+          backgroundColor: mainColor,
           elevation: 1,
         },
-        tabBarActiveTintColor: mainColor,
+        tabBarActiveTintColor: screenBg,
         headerShown: false,
-        tabBarInactiveTintColor: inActiveColor,
+        tabBarInactiveTintColor: "lightgrey",
       }}
     >
       <Tab.Screen
-        name="Home"
-        component={HomeScreen}
+        name="Timer"
+        component={TimerScreen}
         options={{
-          tabBarLabel: "Home",
-          tabBarShowLabel: false,
+          tabBarLabel: "Timer",
+          tabBarShowLabel: true,
           tabBarIcon: ({ color, size }) => (
-            <Entypo name="home" color={color} size={size} />
+            <MaterialIcons name="timer" color={color} size={size} />
           ),
         }}
       />
       <Tab.Screen
-        name="Cart"
-        component={CartScreen}
+        name="Activity"
+        component={ActivityScreen}
         options={{
-          tabBarLabel: "Booking",
-          tabBarShowLabel: false,
-
+          tabBarLabel: "Activity",
+          tabBarShowLabel: true,
           tabBarIcon: ({ color, size }) => (
-            <Entypo name="shopping-cart" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{
-          tabBarLabel: "Profile",
-          tabBarShowLabel: false,
-          tabBarIcon: ({ color, size }) => (
-            <Entypo name="user" color={color} size={size} />
+            <AntDesign name="filetext1" color={color} size={size} />
           ),
         }}
       />

@@ -9,9 +9,14 @@ import React, { useState } from "react";
 import { Feather, AntDesign } from "@expo/vector-icons";
 import { inputBg, mainColor } from "../AppColors";
 import { w, h } from "react-native-responsiveness";
-const CustomLoginUser = () => {
+const CustomLoginUser = ({ istimer }) => {
   return (
-    <View style={styles.customInptdiv}>
+    <View
+      style={{
+        ...styles.customInptdiv,
+        width: istimer ? "90%" : w("94%"),
+      }}
+    >
       <View style={styles.custminp}>
         <Text>hy</Text>
       </View>
@@ -29,7 +34,6 @@ export default CustomLoginUser;
 
 const styles = StyleSheet.create({
   customInptdiv: {
-    width: w("94%"),
     backgroundColor: inputBg,
     borderRadius: h("1%"),
     height: h("5%"),

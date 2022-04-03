@@ -4112,6 +4112,11 @@ mockdate@^3.0.2:
   resolved "https://registry.yarnpkg.com/mockdate/-/mockdate-3.0.5.tgz#789be686deb3149e7df2b663d2bc4392bc3284fb"
   integrity sha512-iniQP4rj1FhBdBYS/+eQv7j1tadJ9lJtdzgOpvsOHng/GbcDh2Fhdeq+ZRldrPYdXvCyfFUmFeEwEGXZB5I/AQ==
 
+moment@^2.24.0:
+  version "2.29.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
+  integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -4604,6 +4609,21 @@ react-is@^17.0.1, react-is@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
+
+react-native-circle-timer@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-circle-timer/-/react-native-circle-timer-1.0.0.tgz#24732e7e1d08dfdad85f38c2a7d4e8d2764b8736"
+  integrity sha512-kI2qrJBHmhABgw6JQXml/Rf+lhkcPHbMf1RmHqOAYOtRNJpXkKoSyLcv7duKHRO5mE7oI7sc0vmJN3yZUGVMmw==
+  dependencies:
+    moment "^2.24.0"
+
+react-native-circle-timer@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-circle-timer/-/react-native-circle-timer-1.0.1.tgz#1018ca58b4b9f969cf8a7740a3710568cfee0cc0"
+  integrity sha512-/Q0tLkN03/mebja499zRCSVsk735VMx2Wbs7pEZY9jDp0FHS05TpiAqAOeTXXOzf2UuvE/dmEQtL/oPBmciUpQ==
+  dependencies:
+    moment "^2.24.0"
+    react-native-circle-timer "1.0.0"
 
 react-native-codegen@^0.0.6:
   version "0.0.6"
