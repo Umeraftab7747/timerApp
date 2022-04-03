@@ -1,12 +1,14 @@
 import { StyleSheet, Text, View, StatusBar, SafeAreaView } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { mainColor, screenBg, stopColor } from "../AppColors";
 import CircleTimer from "react-native-circle-timer";
 import CustomLoginUser from "../Components/CustomLoginUser";
 import CustomAuthBtn from "../Components/CustomAuthBtn";
 import { w, h } from "react-native-responsiveness";
 import { Feather } from "@expo/vector-icons";
+import CustomModel from "../Components/CustomModel";
 const TimerScreen = ({ navigation }) => {
+  const [ismodal, setismodal] = useState(false);
   return (
     <SafeAreaView style={styles.mainDiv}>
       <View style={styles.introdiv}>
@@ -32,12 +34,28 @@ const TimerScreen = ({ navigation }) => {
         showSecond={false}
       />
       <View style={styles.activitysel}>
-        <CustomAuthBtn istimer={true} title={"Start"} bgColor={mainColor} />
+        <CustomAuthBtn
+          istimer={true}
+          title={"Start"}
+          bgColor={mainColor}
+          onClick={() => setismodal(!ismodal)}
+        />
       </View>
       <View style={styles.txtcont}>
         <Text style={styles.sechead}>Today’s total working time</Text>
         <Text style={styles.firhead}>7 hr 45 mins</Text>
       </View>
+      <CustomModel show={ismodal} toggleModal={() => setismodal(!ismodal)}>
+        <View style={styles.stopdiv}>
+          <Text style={styles.head}>Stop Reason</Text>
+          <CustomLoginUser istimer={true} />
+          <CustomAuthBtn
+            title={"Validate"}
+            onClick={() => setismodal(!ismodal)}
+            istimer={true}
+          />
+        </View>
+      </CustomModel>
     </SafeAreaView>
   );
 };
@@ -100,5 +118,15 @@ const styles = StyleSheet.create({
   dattxt: {
     marginLeft: h("1%"),
     fontSize: h("2.3%"),
+  },
+  stopdiv: {
+    width: "90%",
+    height: "30%",
+    backgroundColor: screenBg,
+    borderRadius: h("2%"),
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-evenly",
+    flexDirection: "column",
   },
 });
