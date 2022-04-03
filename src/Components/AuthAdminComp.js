@@ -59,7 +59,7 @@ const AuthAdminComp = ({ onSubmit, onOther }) => {
         ))}
       </View>
       <TouchableOpacity style={styles.emailbtn} onPress={onOther}>
-        <Text style={styles.emailtxt}>Login using Email address</Text>
+        <Text style={styles.emailtxt}>Login using email address</Text>
       </TouchableOpacity>
     </>
   );
@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
   desc: {
     fontSize: h("2.5%"),
     textAlign: "center",
+    marginTop: h("0.5%"),
   },
   introdiv: {
     width: "100%",
@@ -111,9 +112,12 @@ const styles = StyleSheet.create({
     marginTop: h("2%"),
   },
   emailtxt: {
-    fontSize: h("2.2%"),
+    fontSize: h("2.1%"),
     color: mainColor,
     letterSpacing: 1,
-    textTransform: "capitalize",
+  },
+  labl: {
+    fontWeight: "bold",
+    fontSize: h("2%"),
   },
 });

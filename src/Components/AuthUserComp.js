@@ -14,7 +14,7 @@ import { inputBg, mainColor } from "../AppColors";
 const AuthUserComp = ({ onSubmit }) => {
   const [isRemember, setisRemember] = useState(false);
   return (
-    <>
+    <View style={styles.Container}>
       <View style={styles.introdiv}>
         <Text style={styles.heading}>Login</Text>
         <Text style={styles.desc}>Log in to access to your timer</Text>
@@ -38,15 +38,15 @@ const AuthUserComp = ({ onSubmit }) => {
                 isRemember ? [styles.emptybox, styles.active] : styles.emptybox
               }
             />
-            <Text>Remember me</Text>
+            <Text style={styles.rememberme}>remember me</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.forgtBtn}>
-            <Text>Forgot Your Password</Text>
+            <Text style={styles.Ftext}>Forgot Your Password</Text>
           </TouchableOpacity>
         </View>
-        <CustomAuthBtn title="Login" onClick={onSubmit} />
+        <CustomAuthBtn title="Log in" onClick={onSubmit} />
       </View>
-    </>
+    </View>
   );
 };
 
@@ -54,12 +54,12 @@ export default AuthUserComp;
 
 const styles = StyleSheet.create({
   heading: {
-    fontSize: h("4%"),
+    fontSize: h("5%"),
     fontWeight: "bold",
     textAlign: "center",
   },
   desc: {
-    fontSize: h("2.5%"),
+    fontSize: h("2.4%"),
     textAlign: "center",
   },
   inputs: {
@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-evenly",
     flexDirection: "column",
+    // backgroundColor: "green",
   },
   emptybox: {
     width: h("2%"),
@@ -80,12 +81,13 @@ const styles = StyleSheet.create({
   },
   active: { backgroundColor: mainColor },
   btnsDiv: {
-    width: "100%",
+    width: "95%",
     height: h("6%"),
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "row",
+    // backgroundColor: "red",
   },
   remberbtn: {
     height: "100%",
@@ -102,13 +104,31 @@ const styles = StyleSheet.create({
   },
   labl: {
     marginBottom: h("1%"),
+    fontWeight: "bold",
+    fontSize: h("2.1%"),
   },
   introdiv: {
     width: "100%",
     height: "20%",
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
     flexDirection: "column",
+    // backgroundColor: "red",
+    justifyContent: "center",
+    marginTop: h("8%"),
+  },
+  Container: {
+    flex: 1,
+    alignItems: "center",
+  },
+  Ftext: {
+    color: mainColor,
+    fontSize: h("2%"),
+    fontWeight: "500",
+  },
+  rememberme: {
+    color: "#000",
+    fontSize: h("2%"),
+    fontWeight: "500",
   },
 });

@@ -21,7 +21,7 @@ export default CustomAuthBtn;
 
 const styles = StyleSheet.create({
   btn: {
-    height: h("5%"),
+    height: h("7%"),
     alignSelf: "center",
     display: "flex",
     alignItems: "center",
@@ -32,5 +32,6 @@ const styles = StyleSheet.create({
     fontSize: h("2.8%"),
     fontWeight: "bold",
     color: screenBg,
+    textTransform: "uppercase",
   },
 });

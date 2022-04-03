@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   customKey: {
     width: w("20%"),
     height: w("20%"),
-    borderRadius: w("2%"),
+    borderRadius: w("4%"),
     marginBottom: h("1%"),
     display: "flex",
     alignItems: "center",
@@ -32,8 +32,10 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: w("7%"),
+    fontWeight: "bold",
   },
   text2: {
     fontSize: w("5%"),
+    fontWeight: "bold",
   },
 });

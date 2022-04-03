@@ -18,7 +18,7 @@ const CustomLoginUser = ({ istimer, title }) => {
       }}
     >
       <View style={styles.custminp}>
-        <Text>{title}</Text>
+        <Text style={styles.title}>{title}</Text>
       </View>
       <TouchableOpacity
         style={styles.inpBtn}
@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     flexDirection: "row",
     alignSelf: "center",
+    marginTop: h("1%"),
   },
   custminp: {
     width: "86%",
